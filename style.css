@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Archivo Narrow", sans-serif;
+}
+#container {
+  text-align: center;
+  background-color: #009432;
+  width: 50%;
+}
+#results {
+  padding-bottom: 40px;
+}
+h2 {
+  padding-bottom: 20px;
+}
+button {
+  width: 30%;
+  height: 20%;
+  font-size: 70px;
+}
