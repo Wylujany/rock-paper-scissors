@@ -9,10 +9,11 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Archivo Narrow", sans-serif;
+  color: #ffbe76;
 }
 #container {
   text-align: center;
-  background-color: #009432;
+  background-color: #e056fd;
   width: 60%;
   height: 500px;
 }
