@@ -13,10 +13,14 @@ body {
 #container {
   text-align: center;
   background-color: #009432;
-  width: 50%;
+  width: 60%;
+  height: 500px;
 }
 #results {
   padding-bottom: 40px;
+}
+#scoreboard {
+  font-size: 50px;
 }
 h2 {
   padding-bottom: 20px;

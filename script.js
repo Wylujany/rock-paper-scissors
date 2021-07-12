@@ -6,17 +6,34 @@ let userScore = 0;
 let computerScore = 0;
 let userMove;
 
+// randomizing computer move
 computerPlay = () => {
   let moves = ["r", "p", "s"];
   return moves[Math.floor(Math.random() * 3)];
 };
 
-buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    userMove = e.target.value;
-    playRound(userMove, computerPlay());
+// plays the round when user clicks a button
+function handleClick(e) {
+  userMove = e.target.value;
+  playRound(userMove, computerPlay());
+}
+// informs user that he won
+youWin = () => {
+  outcome.textContent = "You win!";
+  buttons.forEach((button) => {
+    button.removeEventListener("click", handleClick);
+    button.style.border = "5px solid green";
   });
-});
+};
+// informs user that he lost
+youLose = () => {
+  outcome.textContent = "You lose!";
+  buttons.forEach((button) => {
+    button.removeEventListener("click", handleClick);
+    button.style.border = "5px solid red";
+  });
+};
+// round logic
 function playRound(player, computer) {
   switch (player + computer) {
     case "rs":
@@ -37,11 +54,13 @@ function playRound(player, computer) {
       break;
   }
   if (userScore >= 5) {
-    outcome.textContent = "You win!";
-    buttons.forEach((button) => {
-      button.removeEventListener("click");
-    });
+    youWin();
   } else if (computerScore >= 5) {
-    outcome.textContent = "You lose!";
+    youLose();
   }
 }
+
+// makes buttons clickable
+buttons.forEach((button) => {
+  button.addEventListener("click", handleClick);
+});
